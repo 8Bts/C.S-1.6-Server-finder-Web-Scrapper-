@@ -5,12 +5,13 @@ This project is about scraping a website that is listing IP addresses of game se
 
 ## Built With
 
-- Ruby 2.6.6p146
+- Ruby 3.2.2
 - Rspec 3.9
-- Nokogiri 
-- HTTParty
-- Net-Ping
-- Colorize
+- Nokogiri 1.19.4
+- HTTParty 0.18.1
+- Net-Ping 2.0.8
+- Colorize 0.8.1
+- Bundler 2.4.10
 - VS Code
 - Repl.it
 
@@ -26,7 +27,7 @@ To get a local copy follow these simple example steps.
 In order to make the program work, you need to have ruby interpreter installed in your system. You can get the latest version of ruby from [official website](https://www.ruby-lang.org/en/downloads/).
 
 ## Installation
-run `bundle install` command in shell
+Run `bundle install` in your shell. The Gemfile pins gem versions so installs stay reproducible.
 
 ## Usage
 1. Open your command prompt and navigate to 'bin' folder of application directory(use 'cd' command)
@@ -63,4 +64,3 @@ Give a ⭐️ if you like this project!
 - <a href="https://www.rubygems.org/" target="_blank">Ruby Gems official website</a>
 - <a href="https://ruby-doc.org/core-2.6.1/" target="_blank">Ruby Docs</a>
 - <a href="https://www.stackoverflow.com/" target="_blank">Stackoverflow</a>
-
