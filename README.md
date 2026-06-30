@@ -1,4 +1,4 @@
-# Web-Scrapper
+# C.S 1.6 Server Finder (Web-Scrapper)
 This project is about scraping a website that is listing IP addresses of game servers. The application parses network information of game servers from web documents and also does a ping test for them. After testing ping rates, the program outputs a list of game servers sorted by their Ping value in ascending order. You can get more lists by typing 'next' after each output.
 
 ![screenshot](https://github.com/8Bts/Web-Scrapper/blob/scrapper/screenshot.png)
