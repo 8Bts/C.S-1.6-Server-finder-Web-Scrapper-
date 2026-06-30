@@ -32,7 +32,8 @@ Run `bundle install` in your shell. The Gemfile pins gem versions so installs st
 ## Usage
 1. Open your command prompt and navigate to 'bin' folder of application directory(use 'cd' command)
 2. Type ruby main.rb
-3. Type 'next' if you want to load more server information
+3. To search servers by map, type `ruby main.rb -map=cs_mansion`
+4. Type 'next' if you want to load more server information
 
 ## Automated tests
 

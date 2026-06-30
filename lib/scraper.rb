@@ -1,21 +1,34 @@
 require 'nokogiri'
 require 'httparty'
 require 'net/ping'
+require 'uri'
 require_relative '../lib/game_server'
 
 class Scraper
   @@page_itr = 1
 
-  private_class_method def self.scrap_list(page)
+  private_class_method def self.search_url(page, map)
+    query_params = {}
+    query_params[:search_by] = 'map' unless map.nil? || map.empty?
+    query_params[:query] = map unless map.nil? || map.empty?
+    query_params[:searchpge] = page if page > 1
+
+    query = URI.encode_www_form(query_params)
     url = 'https://www.gametracker.com/search/cs/'
-    url = "https://www.gametracker.com/search/cs/?searchpge=#{page}#search" if page > 1
+    url += "?#{query}" unless query.empty?
+    url += '#search' if page > 1
+    url
+  end
+
+  private_class_method def self.scrap_list(page, map)
+    url = search_url(page, map)
     body = HTTParty.get(url).body
     doc = Nokogiri::HTML(body)
     doc
   end
 
-  def self.parse_servers
-    doc = scrap_list(@@page_itr)
+  def self.parse_servers(map = nil)
+    doc = scrap_list(@@page_itr, map)
     game_servers = []
 
     puts "\nTesting ping rates and parsing info...\n\n"
